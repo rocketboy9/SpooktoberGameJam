@@ -1,3 +1,27 @@
-[gd_scene format=3 uid="uid://cogkgei4bpytl"]
+[gd_scene load_steps=3 format=3 uid="uid://cogkgei4bpytl"]
+
+[ext_resource type="Texture2D" uid="uid://duwb1twkoya1m" path="res://images/240_F_443693407_zQJa1GCqtY6C0OyrRjYGlMDi15XdTaW1.jpg" id="1_gd7dh"]
+[ext_resource type="PackedScene" uid="uid://cf42mal5pf385" path="res://Player/player.tscn" id="1_ig587"]
 
 [node name="Level" type="Node2D"]
+
+[node name="Ground" type="Node2D" parent="."]
+position = Vector2(238, 117)
+
+[node name="Grass" type="Sprite2D" parent="Ground"]
+modulate = Color(0.294118, 0.294118, 0.294118, 1)
+texture_repeat = 2
+position = Vector2(58.5, 56)
+scale = Vector2(1.24375, 1.46667)
+texture = ExtResource("1_gd7dh")
+region_enabled = true
+region_rect = Rect2(-470.557, -288.25, 3831.67, 2049.06)
+
+[node name="Player" parent="." instance=ExtResource("1_ig587")]
+position = Vector2(608, 351)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+color = Color(0.835294, 0.835294, 0.835294, 1)
+blend_mode = 1
