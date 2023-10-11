@@ -20,10 +20,12 @@ func _process(delta):
 	move_and_slide()
 	
 	if direction != Vector2(0,0):#holds the flashlight angle based on what was last pressed
-		$".".rotation = direction.angle() - PI
-		lastDirectionLooked = $".".rotation
+		$LightStuff.rotation = direction.angle() - PI
+		lastDirectionLooked = $LightStuff.rotation
 	
-	if Input.is_action_just_pressed("left") or Input.is_action_just_pressed("right"):
-		$PlayerSprite.scale.x *= -1
+	if Input.is_action_just_pressed("left") and $Sprite2D.scale.x < 0:
+		$Sprite2D.scale.x *= -1
+	if Input.is_action_just_pressed("right") and $Sprite2D.scale.x > 0:
+		$Sprite2D.scale.x *= -1
 		
 		
