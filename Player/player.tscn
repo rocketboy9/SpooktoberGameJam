@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cf42mal5pf385"]
+[gd_scene load_steps=6 format=3 uid="uid://cf42mal5pf385"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_yu2tv"]
 [ext_resource type="Texture2D" uid="uid://bfl0o1igwhfe8" path="res://images/png.png" id="2_cwy8h"]
+[ext_resource type="Texture2D" uid="uid://bm0gcfh0p03kn" path="res://images/Sprite-0002.png" id="2_fp87f"]
 [ext_resource type="Texture2D" uid="uid://gjx3r3505mcr" path="res://images/circle.png" id="3_jl0o0"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_h7uin"]
@@ -26,3 +27,6 @@ texture = ExtResource("3_jl0o0")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource("OccluderPolygon2D_h7uin")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_fp87f")
