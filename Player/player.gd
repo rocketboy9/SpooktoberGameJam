@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @export var speed = 100
 var lastDirectionLooked: int
+signal PressedInteract
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -28,4 +29,8 @@ func _process(delta):
 	if Input.is_action_just_pressed("right") and $Sprite2D.scale.x > 0:
 		$Sprite2D.scale.x *= -1
 		
+		
+func _input(event):
+	if event.is_action_pressed("Interact"):
+		PressedInteract.emit()
 		
