@@ -22,4 +22,8 @@ func _process(delta):
 	if direction != Vector2(0,0):#holds the flashlight angle based on what was last pressed
 		$".".rotation = direction.angle() - PI
 		lastDirectionLooked = $".".rotation
+	
+	if Input.is_action_just_pressed("left") or Input.is_action_just_pressed("right"):
+		$PlayerSprite.scale.x *= -1
+		
 		
