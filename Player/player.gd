@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @export var speed = 100
+var lastDirectionLooked: int
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -18,12 +19,11 @@ func _process(delta):
 		speed /= 2
 	move_and_slide()
 	
-	$".".rotation = direction.angle() - PI
-
+	if direction != Vector2(0,0):#holds the flashlight angle based on what was last pressed
+		$".".rotation = direction.angle() - PI
+		lastDirectionLooked = $".".rotation
 	
-	
+	if Input.is_action_just_pressed("left") or Input.is_action_just_pressed("right"):
+		$PlayerSprite.scale.x *= -1
 		
-	
-	
-	
-	
+		
