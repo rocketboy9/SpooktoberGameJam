@@ -50,7 +50,7 @@ func _on_player_pressed_interact():
 			print("communicated with the thingy")
 			break
 	
-	if targetGravestone == null:#if no gravestones are in range in the area then return
+	if targetGravestone == null:#if no gravestones are in range in the area then return/doNothing
 		return
 		
 	if targetGravestone.HasNote == false:
@@ -59,6 +59,7 @@ func _on_player_pressed_interact():
 		Globals.NotesFoundCount += 1
 		targetGravestone.HasNote = false
 		print("You found note number " + str(Globals.NotesFoundCount))
+		$UINotes.updateNoteCount()
 		if Globals.NoteAmount == Globals.NotesFoundCount:
 			print("you win!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
 		

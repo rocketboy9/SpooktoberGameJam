@@ -10,7 +10,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
 
@@ -21,6 +21,6 @@ func _on_area_2d_body_entered(_body):#create body exited thingy that goes along 
 		print("player in range to talk interact with gravestone")
 
 
-func _on_area_2d_body_exited(body):
+func _on_area_2d_body_exited(_body):
 	InArea = false
-	print("player no longer in range")
+	print("player no longer in range to interact with the gravestone")
