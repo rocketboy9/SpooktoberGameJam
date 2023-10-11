@@ -19,8 +19,10 @@ region_rect = Rect2(-470.557, -288.25, 3831.67, 2049.06)
 
 [node name="Player" parent="." instance=ExtResource("1_ig587")]
 position = Vector2(608, 351)
+speed = 150
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(0.35, 0.35)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 color = Color(0.835294, 0.835294, 0.835294, 1)
