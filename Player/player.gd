@@ -14,3 +14,13 @@ func _process(delta):
 	position += velocity *delta
 	move_and_slide()
 	
+	print(direction)
+	$".".rotation = direction.angle() - PI
+
+	
+	
+		
+	
+	
+	
+	
