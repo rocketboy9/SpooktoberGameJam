@@ -18,7 +18,6 @@ func _process(delta):
 		speed /= 2
 	move_and_slide()
 	
-	print(direction)
 	$".".rotation = direction.angle() - PI
 
 	
