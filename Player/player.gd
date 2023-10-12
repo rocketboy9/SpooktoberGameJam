@@ -24,10 +24,10 @@ func _process(delta):
 		$LightStuff.rotation = direction.angle() - PI
 		lastDirectionLooked = $LightStuff.rotation
 	
-	if Input.is_action_just_pressed("left") and $Sprite2D.scale.x < 0:
-		$Sprite2D.scale.x *= -1
-	if Input.is_action_just_pressed("right") and $Sprite2D.scale.x > 0:
-		$Sprite2D.scale.x *= -1
+	if Input.is_action_just_pressed("left") and $PlayerSprite.scale.x < 0:
+		$PlayerSprite.scale.x *= -1
+	if Input.is_action_just_pressed("right") and $PlayerSprite.scale.x > 0:
+		$PlayerSprite.scale.x *= -1
 		
 		
 func _input(event):
