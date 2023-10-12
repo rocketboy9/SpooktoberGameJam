@@ -86,6 +86,7 @@ zoom = Vector2(0.35, 0.35)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 color = Color(0.835294, 0.835294, 0.835294, 1)
+energy = 1.39
 blend_mode = 1
 metadata/_edit_lock_ = true
 
@@ -122,6 +123,7 @@ shape = SubResource("SegmentShape2D_lol8x")
 
 [node name="UINotes" parent="." instance=ExtResource("5_o517h")]
 
+[connection signal="PressedInteract" from="Player" to="." method="_on_player_pressed_interact"]
 [connection signal="body_entered" from="MapBoundry/NorthBorder" to="." method="_on_north_border_body_entered"]
 [connection signal="body_entered" from="MapBoundry/WestBorder" to="." method="_on_west_border_body_entered"]
 [connection signal="body_entered" from="MapBoundry/EastBorder" to="." method="_on_east_border_body_entered"]

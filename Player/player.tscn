@@ -1,11 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://cf42mal5pf385"]
+[gd_scene load_steps=6 format=3 uid="uid://cf42mal5pf385"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_yu2tv"]
 [ext_resource type="Texture2D" uid="uid://bm0gcfh0p03kn" path="res://images/Sprite-0002.png" id="2_fp87f"]
+[ext_resource type="Texture2D" uid="uid://bfl0o1igwhfe8" path="res://images/png.png" id="3_bio32"]
 [ext_resource type="Texture2D" uid="uid://gjx3r3505mcr" path="res://images/circle.png" id="3_jl0o0"]
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_h7uin"]
-polygon = PackedVector2Array(-186, -54, -162, -24, -94.3627, -16.8942, -92.1642, 16.8166, -160, 24, -184, 62, -54, 58, -60, -50)
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_v2kam"]
+polygon = PackedVector2Array(-80, 8, -150, 44, -142, 54, -60, 8, -138, -56, -148, -44)
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(23, 4)
@@ -14,18 +15,34 @@ script = ExtResource("1_yu2tv")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-10, -102, -6, -50, -70, 18, -8, 52, -18, 118, 60, 116, 60, 56, 56, -18, 50, -48, 52, -102, 30, -120)
+metadata/_edit_lock_ = true
 
 [node name="LightStuff" type="Node2D" parent="."]
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="LightStuff"]
-occluder = SubResource("OccluderPolygon2D_h7uin")
-
-[node name="PointLight2D" type="PointLight2D" parent="LightStuff"]
-position = Vector2(-110, -4.76837e-07)
+[node name="FlashlightLight" type="PointLight2D" parent="LightStuff"]
+position = Vector2(-100, 8)
 scale = Vector2(20.375, 19.625)
 shadow_enabled = true
 texture = ExtResource("3_jl0o0")
+texture_scale = 0.3
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="FlashlightSprite" type="Sprite2D" parent="LightStuff"]
+position = Vector2(-70, 8)
+scale = Vector2(0.208457, 0.209732)
+texture = ExtResource("3_bio32")
+metadata/_edit_lock_ = true
+
+[node name="FlashlightOccluder" type="LightOccluder2D" parent="LightStuff"]
+position = Vector2(0, 2)
+occluder = SubResource("OccluderPolygon2D_v2kam")
+
+[node name="PlayerLight" type="PointLight2D" parent="LightStuff"]
+position = Vector2(-62, 12)
+energy = 1.25
+texture = ExtResource("3_jl0o0")
+texture_scale = 2.0
+
+[node name="PlayerSprite" type="Sprite2D" parent="."]
 scale = Vector2(3, 3)
 texture = ExtResource("2_fp87f")
+metadata/_edit_lock_ = true
