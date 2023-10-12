@@ -3,7 +3,8 @@ extends Node2D
 @onready var Gravestones = $Gravestones.get_children() #this crap assigns notes to a random 5 unique gravestones
 
 func _process(_delta):
-	pass
+	if Input.is_action_just_pressed("ui_cancel"):
+		get_tree().quit()
 	
 func _ready():
 
