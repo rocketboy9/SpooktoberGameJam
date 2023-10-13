@@ -101,6 +101,7 @@ metadata/_edit_lock_ = true
 
 [node name="NorthBorder" type="Area2D" parent="MapBoundry"]
 position = Vector2(0, -9794)
+collision_mask = 2
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MapBoundry/NorthBorder"]
@@ -108,6 +109,7 @@ shape = SubResource("SegmentShape2D_rttsb")
 
 [node name="WestBorder" type="Area2D" parent="MapBoundry"]
 position = Vector2(-11492, 0)
+collision_mask = 2
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MapBoundry/WestBorder"]
@@ -115,6 +117,7 @@ shape = SubResource("SegmentShape2D_ludcu")
 
 [node name="EastBorder" type="Area2D" parent="MapBoundry"]
 position = Vector2(11492, 1)
+collision_mask = 2
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MapBoundry/EastBorder"]
@@ -122,6 +125,7 @@ shape = SubResource("SegmentShape2D_a1fjp")
 
 [node name="SouthBorder" type="Area2D" parent="MapBoundry"]
 position = Vector2(0, 9794)
+collision_mask = 2
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MapBoundry/SouthBorder"]

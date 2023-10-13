@@ -6,6 +6,7 @@ func _process(_delta):
 	if Input.is_action_just_pressed("ui_cancel"):
 		get_tree().quit()
 	
+	
 func _ready():
 
 	var uniqueNumbers = []
@@ -20,24 +21,28 @@ func _ready():
 		elif gravestone.HasNote == false: print("No note")
 
 
-func _on_north_border_body_entered(_body):
-	$Player.position.y *= -1
-	$Player.position.y -= 100
+func _on_north_border_body_entered(body):
+	if "lastDirectionLooked" in body:
+		$Player.position.y *= -1
+		$Player.position.y -= 100
 
 
-func _on_west_border_body_entered(_body):
-	$Player.position.x *= -1
-	$Player.position.x -= 100
+func _on_west_border_body_entered(body):
+	if "lastDirectionLooked" in body:
+		$Player.position.x *= -1
+		$Player.position.x -= 100
 
 
-func _on_east_border_body_entered(_body):
-	$Player.position.x *= -1
-	$Player.position.x += 100
+func _on_east_border_body_entered(body):
+	if "lastDirectionLooked" in body:
+		$Player.position.x *= -1
+		$Player.position.x += 100
 
 
-func _on_south_border_body_entered(_body):
-	$Player.position.y *= -1
-	$Player.position.y += 100
+func _on_south_border_body_entered(body):
+	if "lastDirectionLooked" in body:
+		$Player.position.y *= -1
+		$Player.position.y += 100
 
 
 func _on_player_pressed_interact():
@@ -45,13 +50,15 @@ func _on_player_pressed_interact():
 	var gravestones = $Gravestones.get_children()
 	var targetGravestone
 	
-	for gravestone in gravestones:#checks for the gravestone that has InArea == true
+	# Checks for the gravestone that has InArea == true
+	for gravestone in gravestones:
 		if gravestone.InArea:
 			targetGravestone = gravestone
 			print("communicated with the thingy")
 			break
-	
-	if targetGravestone == null:#if no gravestones are in range in the area then return/doNothing
+	# If no gravestones are in range in the area then return/do nothing
+	# This might not be necessary -Liam
+	if targetGravestone == null:
 		return
 		
 	if targetGravestone.HasNote == false:
@@ -64,3 +71,8 @@ func _on_player_pressed_interact():
 		if Globals.NoteAmount == Globals.NotesFoundCount:
 			print("you win!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
 		
+
+
+func _on_ghost_game_over():
+	# TODO: Write game over logic
+	pass
