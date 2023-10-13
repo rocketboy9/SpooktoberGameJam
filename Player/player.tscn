@@ -11,10 +11,11 @@ polygon = PackedVector2Array(-80, 8, -150, 44, -142, 54, -60, 8, -138, -56, -148
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(23, 4)
 scale = Vector2(0.5, 0.5)
+collision_layer = 3
 script = ExtResource("1_yu2tv")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-10, -102, -6, -50, -70, 18, -8, 52, -18, 118, 60, 116, 60, 56, 56, -18, 50, -48, 52, -102, 30, -120)
+polygon = PackedVector2Array(-8, 52, -18, 118, 60, 116, 60, 56)
 metadata/_edit_lock_ = true
 
 [node name="LightStuff" type="Node2D" parent="."]
