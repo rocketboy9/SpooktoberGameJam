@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cogkgei4bpytl"]
+[gd_scene load_steps=14 format=3 uid="uid://cogkgei4bpytl"]
 
 [ext_resource type="Script" path="res://level.gd" id="1_4avv4"]
 [ext_resource type="Texture2D" uid="uid://duwb1twkoya1m" path="res://images/240_F_443693407_zQJa1GCqtY6C0OyrRjYGlMDi15XdTaW1.jpg" id="1_gd7dh"]
@@ -23,6 +23,12 @@ b = Vector2(0, 9794)
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_lol8x"]
 a = Vector2(11492, 0)
 b = Vector2(-11492, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5k2j3"]
+bg_color = Color(0.14902, 0.0588235, 0.0588235, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_evjgr"]
+bg_color = Color(0.6, 0, 0, 1)
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_4avv4")
@@ -89,7 +95,7 @@ position = Vector2(608, 351)
 metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(0.35, 0.35)
+zoom = Vector2(0.5, 0.5)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 visible = false
@@ -136,6 +142,34 @@ shape = SubResource("SegmentShape2D_lol8x")
 [node name="UINotes" parent="." instance=ExtResource("5_o517h")]
 
 [node name="SpawnGhostTimer" type="Timer" parent="."]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="StaminAspectContainer" type="AspectRatioContainer" parent="UI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -217.0
+offset_bottom = 39.0
+grow_horizontal = 0
+
+[node name="StaminaVBoxContainer" type="VBoxContainer" parent="UI/StaminAspectContainer"]
+layout_mode = 2
+
+[node name="StaminaLabel" type="Label" parent="UI/StaminAspectContainer/StaminaVBoxContainer"]
+layout_mode = 2
+theme = ExtResource("7_si2ej")
+theme_override_font_sizes/font_size = 25
+text = "Stamina"
+horizontal_alignment = 1
+
+[node name="StaminaBar" type="ProgressBar" parent="UI/StaminAspectContainer/StaminaVBoxContainer"]
+custom_minimum_size = Vector2(200, 25)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/background = SubResource("StyleBoxFlat_5k2j3")
+theme_override_styles/fill = SubResource("StyleBoxFlat_evjgr")
+show_percentage = false
 
 [node name="GameOver" type="CanvasLayer" parent="."]
 visible = false
