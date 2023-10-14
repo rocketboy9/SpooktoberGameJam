@@ -12,8 +12,8 @@ func _ready():
 
 func _process(delta):
 	var normal_to_player = (player.position - position).normalized()
-	var velocity = normal_to_player * speed
-	position += velocity * delta
+	var velocityy = normal_to_player * speed
+	position += velocityy * delta
 
 func _on_death_area_body_entered(body):
 	if "lastDirectionLooked" in body:

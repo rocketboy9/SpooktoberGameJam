@@ -74,5 +74,12 @@ func _on_player_pressed_interact():
 
 
 func _on_ghost_game_over():
-	# TODO: Write game over logic
-	pass
+	$GameOver.visible = true
+
+
+func _on_restart_button_pressed():
+	get_tree().reload_current_scene()
+
+
+func _on_quit_button_pressed():
+	get_tree().quit()
