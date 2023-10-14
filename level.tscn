@@ -83,7 +83,7 @@ position = Vector2(987, -478)
 [node name="Gravestone12" parent="Gravestones" instance=ExtResource("4_5y7h6")]
 position = Vector2(1184, -474)
 
-[node name="Player" parent="." instance=ExtResource("1_ig587")]
+[node name="Player" parent="." groups=["Player"] instance=ExtResource("1_ig587")]
 position = Vector2(608, 351)
 metadata/_edit_lock_ = true
 
@@ -132,6 +132,8 @@ metadata/_edit_lock_ = true
 shape = SubResource("SegmentShape2D_lol8x")
 
 [node name="UINotes" parent="." instance=ExtResource("5_o517h")]
+
+[node name="SpawnGhostTimer" type="Timer" parent="."]
 
 [connection signal="game_over" from="Ghosts/Ghost" to="." method="_on_ghost_game_over"]
 [connection signal="PressedInteract" from="Player" to="." method="_on_player_pressed_interact"]
