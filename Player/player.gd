@@ -39,12 +39,12 @@ func _process(_delta):
 		$LightStuff.rotation = direction.angle() - PI
 		lastDirectionLooked = $LightStuff.rotation
 	
+	#flips sprite on the y axis based on when you're going left or right
 	if Input.is_action_just_pressed("left") and $PlayerSprite.scale.x < 0:
 		$PlayerSprite.scale.x *= -1
-	
-	if Input.is_action_just_pressed("right") and $PlayerSprite.scale.x > 0:
+	elif Input.is_action_just_pressed("right") and $PlayerSprite.scale.x > 0:
 		$PlayerSprite.scale.x *= -1
-
+	
 
 func _input(event):
 	if event.is_action_pressed("Interact"):
