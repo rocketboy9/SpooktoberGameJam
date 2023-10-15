@@ -1,14 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://dq6m87q8um2c4"]
+[gd_scene load_steps=4 format=3 uid="uid://cdmoqtocxvqow"]
 
-[ext_resource type="Script" path="res://Gravestone/gravestone.gd" id="1_5cnbc"]
-[ext_resource type="Texture2D" uid="uid://cq8gp3sbu72dd" path="res://images/Tombstone001.png" id="1_achnv"]
+[ext_resource type="Script" path="res://LevelObjects/Gravestone/gravestone.gd" id="1_6vq21"]
+[ext_resource type="Texture2D" uid="uid://cq8gp3sbu72dd" path="res://images/Tombstone001.png" id="2_ikbv0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1b1o7"]
 size = Vector2(67, 88)
 
 [node name="Gravestone" type="StaticBody2D"]
 scale = Vector2(2, 2)
-script = ExtResource("1_5cnbc")
+script = ExtResource("1_6vq21")
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -18,7 +18,7 @@ shape = SubResource("RectangleShape2D_1b1o7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(3, 3)
-texture = ExtResource("1_achnv")
+texture = ExtResource("2_ikbv0")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(15, 17.5, 15, 31.5, 24, 39, -25, 38, -19.5, 32, -18.5, 17.5)

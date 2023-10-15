@@ -1,12 +1,13 @@
-[gd_scene load_steps=14 format=3 uid="uid://cogkgei4bpytl"]
+[gd_scene load_steps=15 format=3 uid="uid://cogkgei4bpytl"]
 
 [ext_resource type="Script" path="res://level.gd" id="1_4avv4"]
 [ext_resource type="Texture2D" uid="uid://duwb1twkoya1m" path="res://images/240_F_443693407_zQJa1GCqtY6C0OyrRjYGlMDi15XdTaW1.jpg" id="1_gd7dh"]
 [ext_resource type="PackedScene" uid="uid://cf42mal5pf385" path="res://Player/player.tscn" id="1_ig587"]
+[ext_resource type="PackedScene" uid="uid://dsjheuvmivjxd" path="res://LevelObjects/Tree/tree.tscn" id="3_bio73"]
 [ext_resource type="PackedScene" uid="uid://cdlic5ihoasqb" path="res://Ghost/ghost.tscn" id="3_p7d28"]
-[ext_resource type="PackedScene" uid="uid://dq6m87q8um2c4" path="res://Gravestone/gravestone.tscn" id="4_5y7h6"]
-[ext_resource type="PackedScene" uid="uid://b3rdpmjeym5i7" path="res://ui_notes.tscn" id="5_o517h"]
-[ext_resource type="Theme" uid="uid://cdioa6m8drbwr" path="res://images/Text.tres" id="7_si2ej"]
+[ext_resource type="PackedScene" uid="uid://cdmoqtocxvqow" path="res://LevelObjects/Gravestone/gravestone.tscn" id="4_rmcpw"]
+[ext_resource type="PackedScene" uid="uid://deobtjm676t2g" path="res://ui_notes.tscn" id="5_o517h"]
+[ext_resource type="Theme" path="res://images/Text.tres" id="7_si2ej"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_rttsb"]
 a = Vector2(11492, 0)
@@ -54,43 +55,45 @@ position = Vector2(1619, 134)
 [node name="Gravestones" type="Node2D" parent="."]
 position = Vector2(469, 186)
 
-[node name="Gravestone" parent="Gravestones" instance=ExtResource("4_5y7h6")]
-position = Vector2(-1124, -474)
+[node name="Gravestone" parent="Gravestones" instance=ExtResource("4_rmcpw")]
+position = Vector2(-891, -282)
 
-[node name="Gravestone2" parent="Gravestones" instance=ExtResource("4_5y7h6")]
-position = Vector2(-887, -499)
+[node name="Gravestone2" parent="Gravestones" instance=ExtResource("4_rmcpw")]
+position = Vector2(-700, -281)
 
-[node name="Gravestone3" parent="Gravestones" instance=ExtResource("4_5y7h6")]
-position = Vector2(-670, -483)
+[node name="Gravestone3" parent="Gravestones" instance=ExtResource("4_rmcpw")]
+position = Vector2(766, -261)
 
-[node name="Gravestone4" parent="Gravestones" instance=ExtResource("4_5y7h6")]
-position = Vector2(-459, -479)
+[node name="Gravestone4" parent="Gravestones" instance=ExtResource("4_rmcpw")]
+position = Vector2(561, -261)
 
-[node name="Gravestone5" parent="Gravestones" instance=ExtResource("4_5y7h6")]
-position = Vector2(-231, -489)
+[node name="Gravestone5" parent="Gravestones" instance=ExtResource("4_rmcpw")]
+position = Vector2(332, -259)
 
-[node name="Gravestone6" parent="Gravestones" instance=ExtResource("4_5y7h6")]
-position = Vector2(-16, -484)
+[node name="Gravestone6" parent="Gravestones" instance=ExtResource("4_rmcpw")]
+position = Vector2(-34, -257)
 
-[node name="Gravestone7" parent="Gravestones" instance=ExtResource("4_5y7h6")]
-position = Vector2(196, -494)
+[node name="Gravestone7" parent="Gravestones" instance=ExtResource("4_rmcpw")]
+position = Vector2(-257, -272)
 
-[node name="Gravestone8" parent="Gravestones" instance=ExtResource("4_5y7h6")]
-position = Vector2(409, -484)
+[node name="Gravestone8" parent="Gravestones" instance=ExtResource("4_rmcpw")]
+position = Vector2(-444, -270)
 
-[node name="Gravestone9" parent="Gravestones" instance=ExtResource("4_5y7h6")]
-position = Vector2(600, -483)
+[node name="Gravestone9" parent="Gravestones" instance=ExtResource("4_rmcpw")]
+position = Vector2(155, -253)
 
-[node name="Gravestone10" parent="Gravestones" instance=ExtResource("4_5y7h6")]
-position = Vector2(802, -489)
+[node name="Gravestone10" parent="Gravestones" instance=ExtResource("4_rmcpw")]
+position = Vector2(-1101, -296)
 
-[node name="Gravestone11" parent="Gravestones" instance=ExtResource("4_5y7h6")]
-position = Vector2(987, -478)
+[node name="LevelScenery" type="Node2D" parent="."]
 
-[node name="Gravestone12" parent="Gravestones" instance=ExtResource("4_5y7h6")]
-position = Vector2(1184, -474)
+[node name="Tree" parent="LevelScenery" instance=ExtResource("3_bio73")]
+position = Vector2(-341, -112)
 
-[node name="Player" parent="." groups=["Player"] instance=ExtResource("1_ig587")]
+[node name="Tree2" parent="LevelScenery" instance=ExtResource("3_bio73")]
+position = Vector2(306, 259)
+
+[node name="Player" parent="." instance=ExtResource("1_ig587")]
 position = Vector2(608, 351)
 metadata/_edit_lock_ = true
 
