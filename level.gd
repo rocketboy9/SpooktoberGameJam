@@ -47,13 +47,14 @@ func _on_south_border_body_entered(body):
 
 
 func _on_player_pressed_interact():
+		
 	print("player just interacted")
 	var gravestones = $Gravestones.get_children()
 	var targetGravestone
 	
-	# Checks for the gravestone that has InArea == true
+	# Checks for the gravestone that has PlayerInArea == true
 	for gravestone in gravestones:
-		if gravestone.InArea:
+		if gravestone.PlayerInArea:
 			targetGravestone = gravestone
 			print("communicated with the thingy")
 			break

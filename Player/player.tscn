@@ -8,7 +8,7 @@
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_v2kam"]
 polygon = PackedVector2Array(-80, 8, -150, 44, -142, 54, -60, 8, -138, -56, -148, -44)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 position = Vector2(23, 4)
 scale = Vector2(0.5, 0.5)
 collision_layer = 3

@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsjheuvmivjxd"]
+
+[ext_resource type="Script" path="res://LevelObjects/Tree/tree.gd" id="1_d47f2"]
+[ext_resource type="Texture2D" uid="uid://bydmfa8qnr3bd" path="res://images/TannersDumbassTree.png" id="1_vxdjw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pwyke"]
+size = Vector2(147, 165.5)
+
+[node name="Tree" type="StaticBody2D" groups=["Trees"]]
+position = Vector2(-5, -100)
+scale = Vector2(2, 2)
+script = ExtResource("1_d47f2")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-2, -3.25)
+shape = SubResource("RectangleShape2D_pwyke")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_vxdjw")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-29, 74, 29, 74, 17, 50, -8, 50)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

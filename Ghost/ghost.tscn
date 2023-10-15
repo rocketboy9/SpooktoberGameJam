@@ -5,7 +5,7 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_67j46"]
 
-[node name="Ghost" type="CharacterBody2D"]
+[node name="Ghost" type="CharacterBody2D" groups=["Ghosts"]]
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_7y5d1")

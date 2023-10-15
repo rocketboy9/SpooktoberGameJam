@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://b3rdpmjeym5i7"]
+[gd_scene load_steps=3 format=3 uid="uid://deobtjm676t2g"]
 
 [ext_resource type="Script" path="res://ui_notes.gd" id="1_p8x52"]
-[ext_resource type="Theme" uid="uid://cdioa6m8drbwr" path="res://images/Text.tres" id="2_d2qb2"]
+[ext_resource type="Theme" path="res://images/Text.tres" id="2_d2qb2"]
 
 [node name="UINotes" type="CanvasLayer"]
 script = ExtResource("1_p8x52")
