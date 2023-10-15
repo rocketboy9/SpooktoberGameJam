@@ -14,6 +14,12 @@ func _process(delta):
 	var normal_to_player = (player.position - position).normalized()
 	velocity = normal_to_player * speed
 	move_and_slide()
+	
+	if normal_to_player.x < 0 and $GhostSprite.scale.x < 0:
+		$GhostSprite.scale.x *= -1
+	elif normal_to_player.x > 0 and $GhostSprite.scale.x > 0:
+		$GhostSprite.scale.x *= -1
+
 
 func _on_death_area_body_entered(body):
 	if "lastDirectionLooked" in body:

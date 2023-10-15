@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 @onready var NoteCountLabel: Label = $Notes/VBoxContainer/Label
-@onready var LabelNoteNotification: Label = $Notes/VBoxContainer2/Label
+@onready var LabelNoteNotification: Label = $Notes/CenterContainer/Label
 
 func _ready():
 	NoteCountLabel.text = "Remaining Notes: " + str(Globals.NoteAmount - Globals.NotesFoundCount)
@@ -9,13 +9,8 @@ func _ready():
 
 func updateNoteCount():
 	
-	
-	
-	
 	NoteCountLabel.text = "Remaining Notes: " + str(Globals.NoteAmount - Globals.NotesFoundCount)
 	LabelNoteNotification.visible = true
-	
-	
 	
 	if Globals.NoteAmount == Globals.NotesFoundCount:
 		LabelNoteNotification.text = "ESCAPE!"

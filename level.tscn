@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dsjheuvmivjxd" path="res://LevelObjects/Tree/tree.tscn" id="3_bio73"]
 [ext_resource type="PackedScene" uid="uid://cdlic5ihoasqb" path="res://Ghost/ghost.tscn" id="3_p7d28"]
 [ext_resource type="PackedScene" uid="uid://cdmoqtocxvqow" path="res://LevelObjects/Gravestone/gravestone.tscn" id="4_rmcpw"]
-[ext_resource type="PackedScene" uid="uid://deobtjm676t2g" path="res://ui_notes.tscn" id="5_o517h"]
+[ext_resource type="PackedScene" uid="uid://b3rdpmjeym5i7" path="res://ui_notes.tscn" id="5_o517h"]
 [ext_resource type="Theme" path="res://images/Text.tres" id="7_si2ej"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_rttsb"]
@@ -101,7 +101,6 @@ metadata/_edit_lock_ = true
 zoom = Vector2(0.5, 0.5)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
-visible = false
 color = Color(0.835294, 0.835294, 0.835294, 1)
 energy = 1.39
 blend_mode = 1
