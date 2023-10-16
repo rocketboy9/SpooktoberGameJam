@@ -9,6 +9,7 @@ size = Vector2(147, 165.5)
 [node name="Tree" type="StaticBody2D" groups=["Trees"]]
 position = Vector2(-5, -100)
 scale = Vector2(2, 2)
+collision_layer = 4
 script = ExtResource("1_d47f2")
 
 [node name="Area2D" type="Area2D" parent="."]

@@ -1,13 +1,85 @@
-[gd_scene load_steps=15 format=3 uid="uid://cogkgei4bpytl"]
+[gd_scene load_steps=20 format=3 uid="uid://cogkgei4bpytl"]
 
 [ext_resource type="Script" path="res://level.gd" id="1_4avv4"]
 [ext_resource type="Texture2D" uid="uid://duwb1twkoya1m" path="res://images/240_F_443693407_zQJa1GCqtY6C0OyrRjYGlMDi15XdTaW1.jpg" id="1_gd7dh"]
 [ext_resource type="PackedScene" uid="uid://cf42mal5pf385" path="res://Player/player.tscn" id="1_ig587"]
 [ext_resource type="PackedScene" uid="uid://dsjheuvmivjxd" path="res://LevelObjects/Tree/tree.tscn" id="3_bio73"]
+[ext_resource type="Texture2D" uid="uid://dqk8sldogly7b" path="res://images/christmas-village-asset-pack/fence.png" id="3_lml1g"]
 [ext_resource type="PackedScene" uid="uid://cdlic5ihoasqb" path="res://Ghost/ghost.tscn" id="3_p7d28"]
 [ext_resource type="PackedScene" uid="uid://cdmoqtocxvqow" path="res://LevelObjects/Gravestone/gravestone.tscn" id="4_rmcpw"]
 [ext_resource type="PackedScene" uid="uid://b3rdpmjeym5i7" path="res://ui_notes.tscn" id="5_o517h"]
 [ext_resource type="Theme" path="res://images/Text.tres" id="7_si2ej"]
+[ext_resource type="PackedScene" uid="uid://wgsar7fdap7i" path="res://LevelObjects/Lampost/lampost.tscn" id="10_babrn"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s7cmo"]
+resource_name = "HorrizontalFenceTilemap"
+texture = ExtResource("3_lml1g")
+margins = Vector2i(7, 0)
+texture_region_size = Vector2i(24, 16)
+use_texture_padding = false
+0:0/next_alternative_id = 10
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/1 = 1
+0:0/1/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/1/physics_layer_0/angular_velocity = 0.0
+0:0/1/physics_layer_0/polygon_0/points = PackedVector2Array(-12, -4.75, 12, -4.75, 12, 8, -12, 8)
+0:0/2 = 2
+0:0/2/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/2/physics_layer_0/angular_velocity = 0.0
+0:0/2/physics_layer_0/polygon_0/points = PackedVector2Array(-12, -4.75, 12, -4.75, 12, 8, -12, 8)
+0:0/3 = 3
+0:0/3/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/3/physics_layer_0/angular_velocity = 0.0
+0:0/3/physics_layer_0/polygon_0/points = PackedVector2Array(-12, -4.75, 12, -4.75, 12, 8, -12, 8)
+0:0/4 = 4
+0:0/4/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/4/physics_layer_0/angular_velocity = 0.0
+0:0/4/physics_layer_0/polygon_0/points = PackedVector2Array(-12, -4.75, 12, -4.75, 12, 8, -12, 8)
+0:0/5 = 5
+0:0/5/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/5/physics_layer_0/angular_velocity = 0.0
+0:0/5/physics_layer_0/polygon_0/points = PackedVector2Array(-12, -4.75, 12, -4.75, 12, 8, -12, 8)
+0:0/6 = 6
+0:0/6/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/6/physics_layer_0/angular_velocity = 0.0
+0:0/6/physics_layer_0/polygon_0/points = PackedVector2Array(-12, -4.75, 12, -4.75, 12, 8, -12, 8)
+0:0/7 = 7
+0:0/7/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/7/physics_layer_0/angular_velocity = 0.0
+0:0/7/physics_layer_0/polygon_0/points = PackedVector2Array(-12, -4.75, 12, -4.75, 12, 8, -12, 8)
+0:0/8 = 8
+0:0/8/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/8/physics_layer_0/angular_velocity = 0.0
+0:0/8/physics_layer_0/polygon_0/points = PackedVector2Array(-12, -4.75, 12, -4.75, 12, 8, -12, 8)
+0:0/9 = 9
+0:0/9/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/9/physics_layer_0/angular_velocity = 0.0
+0:0/9/physics_layer_0/polygon_0/points = PackedVector2Array(-12, -4.75, 12, -4.75, 12, 8, -12, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s4l70"]
+resource_name = "VerticalFenceTilemap"
+texture = ExtResource("3_lml1g")
+margins = Vector2i(18, 0)
+texture_region_size = Vector2i(24, 16)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(8.9375, -8, 12, -8, 12, 8, 8.8125, 8)
+
+[sub_resource type="TileSet" id="TileSet_333vq"]
+tile_size = Vector2i(24, 16)
+physics_layer_0/collision_layer = 4
+physics_layer_0/collision_mask = 3
+sources/0 = SubResource("TileSetAtlasSource_s7cmo")
+sources/4 = SubResource("TileSetAtlasSource_s4l70")
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_rttsb"]
 a = Vector2(11492, 0)
@@ -46,6 +118,12 @@ scale = Vector2(1.24375, 1.46667)
 texture = ExtResource("1_gd7dh")
 region_enabled = true
 region_rect = Rect2(-13146.7, -9035.11, 29912.8, 21839.3)
+
+[node name="TileMap" type="TileMap" parent="Ground"]
+scale = Vector2(5, 5)
+tile_set = SubResource("TileSet_333vq")
+format = 2
+layer_0/tile_data = PackedInt32Array(-1638421, 0, 65536, -1638420, 0, 131072, -1638419, 0, 196608, -1638418, 0, 262144, -1638417, 0, 327680, -1638416, 0, 393216, -1638415, 0, 458752, -1638414, 0, 524288, -1638413, 0, 589824, -1638412, 0, 65536, -1638411, 0, 131072, -1638410, 0, 196608, -1638409, 0, 262144, -1638408, 0, 327680, -1638407, 0, 393216, -1638406, 0, 458752, -1638405, 0, 524288, -1638404, 0, 589824, -1638403, 0, 65536, -1638402, 0, 131072, -1638401, 0, 196608, -1703936, 0, 262144, -1703935, 0, 327680, -1703934, 0, 393216, -1703933, 0, 458752, -1703932, 0, 524288, -1703931, 0, 589824, -1703930, 0, 65536, -1703929, 0, 131072, -1703928, 0, 196608, -1703927, 0, 262144, -1703926, 0, 327680, -1703925, 0, 393216, -1703924, 0, 458752, -1703923, 0, 524288, 1572843, 0, 65536, 1572844, 0, 131072, 1572845, 0, 196608, 1572846, 0, 262144, 1572847, 0, 327680, 1572848, 0, 393216, 1572849, 0, 458752, 1572850, 0, 524288, 1572851, 0, 589824, 1572852, 0, 65536, 1572853, 0, 131072, 1572854, 0, 196608, 1572855, 0, 262144, 1572856, 0, 327680, 1572857, 0, 393216, 1572858, 0, 458752, 1572859, 0, 524288, 1572860, 0, 589824, 1572861, 0, 65536, 1572862, 0, 131072, 1572863, 0, 196608, 1507328, 0, 262144, 1507329, 0, 327680, 1507330, 0, 393216, 1507331, 0, 458752, 1507332, 0, 524288, 1507333, 0, 589824, 1507334, 0, 65536, 1507335, 0, 131072, 1507336, 0, 196608, 1507337, 0, 262144, 1507338, 0, 327680, 1507339, 0, 393216, 1507340, 0, 458752, 1507341, 0, 524288, 1507342, 0, 589824, -1572886, 4, 1, -1376278, 4, 1, -1507350, 4, 1, -1441814, 4, 1, -1310742, 4, 1, -1245206, 4, 1, -1638422, 4, 1, -1179670, 4, 1, -1114134, 4, 1, -1048598, 4, 1, -983062, 4, 1, -917526, 4, 1, -851990, 4, 1, -786454, 4, 1, -720918, 4, 1, -655382, 4, 1, -589846, 4, 1, -524310, 4, 1, -458774, 4, 1, -393238, 4, 1, -327702, 4, 1, -262166, 4, 1, -196630, 4, 1, -131094, 4, 1, -65558, 4, 1, -22, 4, 1, 65514, 4, 1, 131050, 4, 1, 196586, 4, 1, 262122, 4, 1, 327658, 4, 1, 393194, 4, 1, 458730, 4, 1, 524266, 4, 1, 589802, 4, 1, 655338, 4, 1, 720874, 4, 1, 786410, 4, 1, 851946, 4, 1, 917482, 4, 1, 983018, 4, 1, 1048554, 4, 1, 1114090, 4, 1, 1179626, 4, 1, 1245162, 4, 1, 1310698, 4, 1, 1376234, 4, 1, 1441770, 4, 1, 1507306, 4, 1, 1572842, 4, 1, -1703922, 0, 589824, -1638386, 4, 1, -1572850, 4, 1, -1507314, 4, 1, -1441778, 4, 1, -1376242, 4, 1, -1310706, 4, 1, -1245170, 4, 1, -1179634, 4, 1, -1114098, 4, 1, -1048562, 4, 1, -983026, 4, 1, -917490, 4, 1, -851954, 4, 1, -786418, 4, 1, -720882, 4, 1, -655346, 4, 1, -589810, 4, 1, -524274, 4, 1, -458738, 4, 1, -393202, 4, 1, -327666, 4, 1, -262130, 4, 1, -196594, 4, 1, -131058, 4, 1, -65522, 4, 1, 14, 4, 1, 65550, 4, 1, 131086, 4, 1, 196622, 4, 1, 262158, 4, 1, 327694, 4, 1, 393230, 4, 1, 458766, 4, 1, 524302, 4, 1, 589838, 4, 1, 655374, 4, 1, 720910, 4, 1, 786446, 4, 1, 851982, 4, 1, 917518, 4, 1, 983054, 4, 1, 1048590, 4, 1, 1114126, 4, 1, 1179662, 4, 1, 1245198, 4, 1, 1310734, 4, 1, 1376270, 4, 1, 1441806, 4, 1)
 
 [node name="Ghosts" type="Node2D" parent="."]
 
@@ -88,10 +166,64 @@ position = Vector2(-1101, -296)
 [node name="LevelScenery" type="Node2D" parent="."]
 
 [node name="Tree" parent="LevelScenery" instance=ExtResource("3_bio73")]
-position = Vector2(-341, -112)
+position = Vector2(1101, -515)
 
 [node name="Tree2" parent="LevelScenery" instance=ExtResource("3_bio73")]
-position = Vector2(306, 259)
+position = Vector2(-724, -1130)
+
+[node name="Tree3" parent="LevelScenery" instance=ExtResource("3_bio73")]
+position = Vector2(693, -1152)
+
+[node name="Tree4" parent="LevelScenery" instance=ExtResource("3_bio73")]
+position = Vector2(-1128, -907)
+
+[node name="Tree5" parent="LevelScenery" instance=ExtResource("3_bio73")]
+position = Vector2(866, -899)
+
+[node name="Tree6" parent="LevelScenery" instance=ExtResource("3_bio73")]
+position = Vector2(-62, -654)
+
+[node name="Tree7" parent="LevelScenery" instance=ExtResource("3_bio73")]
+position = Vector2(-322, -829)
+
+[node name="Tree8" parent="LevelScenery" instance=ExtResource("3_bio73")]
+position = Vector2(354, -1065)
+
+[node name="Tree9" parent="LevelScenery" instance=ExtResource("3_bio73")]
+position = Vector2(-485, -571)
+
+[node name="Tree10" parent="LevelScenery" instance=ExtResource("3_bio73")]
+position = Vector2(517, -434)
+
+[node name="Tree11" parent="LevelScenery" instance=ExtResource("3_bio73")]
+position = Vector2(634, -780)
+
+[node name="Tree12" parent="LevelScenery" instance=ExtResource("3_bio73")]
+position = Vector2(-64, -985)
+
+[node name="Tree13" parent="LevelScenery" instance=ExtResource("3_bio73")]
+position = Vector2(287, -735)
+
+[node name="Tree14" parent="LevelScenery" instance=ExtResource("3_bio73")]
+position = Vector2(222, -1269)
+
+[node name="Lampost" parent="LevelScenery" instance=ExtResource("10_babrn")]
+position = Vector2(1389, 113)
+
+[node name="Lampost2" parent="LevelScenery" instance=ExtResource("10_babrn")]
+position = Vector2(1347, -1404)
+
+[node name="Lampost3" parent="LevelScenery" instance=ExtResource("10_babrn")]
+position = Vector2(-1785, -1400)
+
+[node name="Lampost4" parent="LevelScenery" instance=ExtResource("10_babrn")]
+position = Vector2(-1766, 46)
+
+[node name="Lampost5" parent="LevelScenery" instance=ExtResource("10_babrn")]
+position = Vector2(1574, 1623)
+
+[node name="Lampost6" parent="LevelScenery" instance=ExtResource("10_babrn")]
+position = Vector2(-1714, 1520)
 
 [node name="Player" parent="." instance=ExtResource("1_ig587")]
 position = Vector2(608, 351)
@@ -101,6 +233,7 @@ metadata/_edit_lock_ = true
 zoom = Vector2(0.5, 0.5)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+visible = false
 color = Color(0.835294, 0.835294, 0.835294, 1)
 energy = 1.39
 blend_mode = 1
