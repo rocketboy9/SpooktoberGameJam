@@ -8,6 +8,7 @@ size = Vector2(67, 88)
 
 [node name="Gravestone" type="StaticBody2D"]
 scale = Vector2(2, 2)
+collision_layer = 4
 script = ExtResource("1_6vq21")
 
 [node name="Area2D" type="Area2D" parent="."]
