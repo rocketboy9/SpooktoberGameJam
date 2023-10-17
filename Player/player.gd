@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed: int = 125
+@export var speed: int = 110
 @export var sprint_speed: int = 225
 var lastDirectionLooked: int
 signal PressedInteract

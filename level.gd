@@ -2,6 +2,8 @@ extends Node2D
 
 @onready var Gravestones = $Gravestones.get_children() #this crap assigns notes to a random 5 unique gravestones
 
+var ghost_scene: PackedScene = preload("res://Ghost/ghost.tscn")
+
 func _process(_delta):
 	if Input.is_action_just_pressed("ui_cancel"):
 		get_tree().quit()
@@ -9,6 +11,7 @@ func _process(_delta):
 	
 	
 func _ready():
+	
 
 	var uniqueNumbers = []
 	while uniqueNumbers.size() < Globals.NoteAmount:
@@ -70,6 +73,14 @@ func _on_player_pressed_interact():
 		targetGravestone.HasNote = false
 		print("You found note number " + str(Globals.NotesFoundCount))
 		$UINotes.updateNoteCount()
+		
+		#Add Ghost for every note that is found
+		var ghost = ghost_scene.instantiate() as CharacterBody2D
+		var shedChildren = $LevelScenery/Shed.find_child("GhostStartPosition")
+		ghost.global_position = shedChildren.global_position
+		ghost.connect("game_over", _on_ghost_game_over)
+		$Ghosts.add_child(ghost)
+		
 		if Globals.NoteAmount == Globals.NotesFoundCount:
 			print("you win!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
 		
