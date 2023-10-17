@@ -10,7 +10,7 @@ func _process(_delta):
 	var direction = Input.get_vector("left", "right", "up", "down")
 	
 	if Input.is_action_just_released("sprint") && speed > 125:
-		speed = 3000#125
+		speed = 125
 	
 	if Input.is_action_pressed("sprint"):
 		if Globals.stamina > 0 && $SprintResetTimer.is_stopped():

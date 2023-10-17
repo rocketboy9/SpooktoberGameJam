@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dsjheuvmivjxd" path="res://LevelObjects/Tree/tree.tscn" id="3_bio73"]
 [ext_resource type="Texture2D" uid="uid://dqk8sldogly7b" path="res://images/christmas-village-asset-pack/fence.png" id="3_lml1g"]
 [ext_resource type="PackedScene" uid="uid://cdlic5ihoasqb" path="res://Ghost/ghost.tscn" id="3_p7d28"]
-[ext_resource type="Texture2D" uid="uid://cg1gupoym7uya" path="res://images/dirt2.png" id="4_kuffe"]
+[ext_resource type="Texture2D" path="res://images/dirt2.png" id="4_kuffe"]
 [ext_resource type="PackedScene" uid="uid://cdmoqtocxvqow" path="res://LevelObjects/Gravestone/gravestone.tscn" id="4_rmcpw"]
 [ext_resource type="PackedScene" uid="uid://b3rdpmjeym5i7" path="res://ui_notes.tscn" id="5_o517h"]
 [ext_resource type="Theme" uid="uid://8tdbpre6i1ap" path="res://images/Text.tres" id="7_si2ej"]
