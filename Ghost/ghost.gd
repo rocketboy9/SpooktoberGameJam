@@ -10,7 +10,7 @@ func _ready():
 	#if randi() % 5 == 0:
 	$GhostSprite.texture = preload("res://images/464c355d4dfa7b0df9489786dca87ae8.25.png")
 
-func _process(delta):
+func _process(_delta):
 	var normal_to_player = (player.position - position).normalized()
 	velocity = normal_to_player * speed
 	move_and_slide()
