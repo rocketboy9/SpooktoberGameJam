@@ -23,8 +23,5 @@ texture = ExtResource("1_n808f")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-25, 5, -25, 26, 17, 26, 25, 19, 25, 5)
 
-[node name="GhostStartPosition" type="Marker2D" parent="."]
-position = Vector2(0.5, 36.375)
-
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

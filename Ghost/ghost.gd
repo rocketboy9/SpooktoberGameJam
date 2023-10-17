@@ -3,7 +3,7 @@ extends CharacterBody2D
 signal game_over()
 
 var player
-@export var speed: int = 100
+@export var speed: int = 1
 
 func _ready():
 	player = get_tree().get_first_node_in_group("Player")

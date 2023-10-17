@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var Gravestones = $Gravestones.get_children() #this crap assigns notes to a random 5 unique gravestones
+@onready var TimeLabel: Label = $WinScreen/GameOver/GameOverContainer/VBoxContainer/Time
 
 var ghost_scene: PackedScene = preload("res://Ghost/ghost.tscn")
 
@@ -12,6 +13,7 @@ func _process(_delta):
 	
 func _ready():
 	
+	$Timer.start()
 
 	var uniqueNumbers = []
 	while uniqueNumbers.size() < Globals.NoteAmount:
@@ -73,19 +75,21 @@ func _on_player_pressed_interact():
 		targetGravestone.HasNote = false
 		print("You found note number " + str(Globals.NotesFoundCount))
 		$UINotes.updateNoteCount()
-		
-		#Add Ghost for every note that is found
-		var ghost = ghost_scene.instantiate() as CharacterBody2D
-		var shedChildren = $LevelScenery/Shed.find_child("GhostStartPosition")
-		ghost.global_position = shedChildren.global_position
-		ghost.connect("game_over", _on_ghost_game_over)
-		$Ghosts.add_child(ghost)
+		CreateGhost()
 		
 		if Globals.NoteAmount == Globals.NotesFoundCount:
 			print("you win!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
 		
 
-
+func CreateGhost():
+	#Add Ghost for every note that is found
+	var ghost = ghost_scene.instantiate() as CharacterBody2D
+	var ghostSpawnPositions = $GhostSpawnPoints.get_children()
+	var ghostSelectedSpawnPosition = ghostSpawnPositions[randi() % ghostSpawnPositions.size()]
+	ghost.global_position = ghostSelectedSpawnPosition.position
+	ghost.connect("game_over", _on_ghost_game_over)
+	$Ghosts.add_child(ghost)
+	
 func _on_ghost_game_over():
 	$GameOver.visible = true
 
@@ -96,3 +100,13 @@ func _on_restart_button_pressed():
 
 func _on_quit_button_pressed():
 	get_tree().quit()
+
+
+func _on_win_area_body_entered(body):
+	#if Globals.NotesFoundCount == Globals.NoteAmount:
+		$WinScreen.visible = true
+		var time = round($Timer.wait_time - $Timer.time_left)
+		TimeLabel.text = "Completed in " + str(time) + " seconds"
+		$Timer.stop()
+		
+		
