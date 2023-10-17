@@ -46,3 +46,4 @@ grow_vertical = 2
 visible = false
 layout_mode = 2
 text = "Ligma"
+horizontal_alignment = 1

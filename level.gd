@@ -96,6 +96,7 @@ func _on_ghost_game_over():
 
 func _on_restart_button_pressed():
 	get_tree().reload_current_scene()
+	Globals.NotesFoundCount = 0
 
 
 func _on_quit_button_pressed():
@@ -103,7 +104,7 @@ func _on_quit_button_pressed():
 
 
 func _on_win_area_body_entered(body):
-	#if Globals.NotesFoundCount == Globals.NoteAmount:
+	if Globals.NotesFoundCount == Globals.NoteAmount:
 		$WinScreen.visible = true
 		var time = round($Timer.wait_time - $Timer.time_left)
 		TimeLabel.text = "Completed in " + str(time) + " seconds"
