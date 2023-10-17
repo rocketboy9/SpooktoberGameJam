@@ -13,7 +13,7 @@ func updateNoteCount():
 	LabelNoteNotification.visible = true
 	
 	if Globals.NoteAmount == Globals.NotesFoundCount:
-		LabelNoteNotification.text = "ESCAPE!"
+		LabelNoteNotification.text = "ESCAPE!\nGo Down to the Entrance"
 		LabelNoteNotification.modulate = Color("ffffff", 1.0)
 	else:
 		var tween = create_tween()
