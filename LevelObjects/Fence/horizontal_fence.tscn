@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://5wocjivhe1gb"]
 
-[ext_resource type="Texture2D" uid="uid://cilkskw3clp43" path="res://images/christmas-village-asset-pack/HorizontalFence.png" id="1_04one"]
+[ext_resource type="Texture2D" path="res://images/christmas-village-asset-pack/HorizontalFence.png" id="1_04one"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qbqty"]
 size = Vector2(137, 68)
