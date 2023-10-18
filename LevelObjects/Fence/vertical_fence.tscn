@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://b123k6336qoi6"]
+
+[ext_resource type="Texture2D" uid="uid://bjryrimvdueet" path="res://images/christmas-village-asset-pack/VerticalFence.png" id="1_gaepe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_owy1t"]
+size = Vector2(20, 157)
+
+[node name="VerticalFence" type="StaticBody2D"]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_owy1t")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(5, 5)
+texture = ExtResource("1_gaepe")

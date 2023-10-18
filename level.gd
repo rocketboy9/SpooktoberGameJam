@@ -78,9 +78,18 @@ func _on_player_pressed_interact():
 		CreateGhost()
 		
 		if Globals.NoteAmount == Globals.NotesFoundCount:
+			OpenGate()
 			print("you win!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
 		
-
+func OpenGate():
+	var HorizontalGates = $Ground/FenceAtEntrance/Horizontals.get_children()
+	for HGate in HorizontalGates:
+		HGate.queue_free()
+		
+	var VerticalGates = $Ground/FenceAtEntrance/Verticals.get_children()
+	for VGate in VerticalGates:
+		VGate.visible = true
+	
 func CreateGhost():
 	#Add Ghost for every note that is found
 	var ghost = ghost_scene.instantiate() as CharacterBody2D

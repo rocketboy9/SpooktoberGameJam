@@ -5,10 +5,15 @@ extends CanvasLayer
 
 func _ready():
 	NoteCountLabel.text = "Remaining Notes: " + str(Globals.NoteAmount - Globals.NotesFoundCount)
-	LabelNoteNotification.text = "Note Found"
+	
+	LabelNoteNotification.visible = true
+	LabelNoteNotification.text = "Find the Hidden Notes on Select Gravestones\nAvoid the Ghosts"
+	var tween = create_tween()
+	tween.tween_property(LabelNoteNotification, "modulate", Color("ffffff", 0.0), 4.0)
+	LabelNoteNotification.modulate = Color("ffffff", 1.0)
 
 func updateNoteCount():
-	
+	LabelNoteNotification.text = "Note Found"
 	NoteCountLabel.text = "Remaining Notes: " + str(Globals.NoteAmount - Globals.NotesFoundCount)
 	LabelNoteNotification.visible = true
 	
