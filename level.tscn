@@ -378,6 +378,12 @@ position = Vector2(-817, 888)
 [node name="Tree28" parent="LevelScenery" instance=ExtResource("3_bio73")]
 position = Vector2(134, 12)
 
+[node name="Lampost7" parent="LevelScenery" instance=ExtResource("10_babrn")]
+position = Vector2(-274, 2024)
+
+[node name="Lampost8" parent="LevelScenery" instance=ExtResource("10_babrn")]
+position = Vector2(185, 2018)
+
 [node name="Player" parent="." instance=ExtResource("1_ig587")]
 position = Vector2(-64, 1614)
 
@@ -385,7 +391,6 @@ position = Vector2(-64, 1614)
 zoom = Vector2(0.5, 0.5)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
-visible = false
 color = Color(0.835294, 0.835294, 0.835294, 1)
 energy = 1.39
 blend_mode = 1
