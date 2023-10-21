@@ -5,8 +5,8 @@ var selfbody = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
+	
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -14,6 +14,10 @@ func _process(_delta):
 		z_index = 1
 	else:
 		z_index = 0
+	
+	#gives the animation a 1/250 chance to play at any give time
+	if randi()%250 == 0:	
+		$FlickerAnimation.play("LampFlicker")
 
 
 func _on_area_2d_body_entered(body):
