@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://cdlic5ihoasqb"]
+
+[ext_resource type="Script" path="res://Ghost/ghost.gd" id="1_7y5d1"]
+[ext_resource type="Texture2D" uid="uid://bjjakgrm0pxng" path="res://images/ghostPixelArt.png" id="2_5jbm7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_67j46"]
+
+[node name="Ghost" type="CharacterBody2D" groups=["Ghosts"]]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_7y5d1")
+
+[node name="GhostSprite" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.384314)
+z_index = 5
+texture = ExtResource("2_5jbm7")
+
+[node name="DeathArea" type="Area2D" parent="."]
+
+[node name="DeathAreaShape" type="CollisionPolygon2D" parent="DeathArea"]
+polygon = PackedVector2Array(-55, 6, -55, 35, 35, 35, 35, 6)
+
+[node name="GhostCollider" type="CollisionShape2D" parent="."]
+position = Vector2(-4, 20)
+shape = SubResource("CircleShape2D_67j46")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[connection signal="body_entered" from="DeathArea" to="." method="_on_death_area_body_entered"]

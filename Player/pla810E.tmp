@@ -13,6 +13,8 @@ position = Vector2(23, 4)
 scale = Vector2(0.5, 0.5)
 collision_mask = 12
 script = ExtResource("1_yu2tv")
+speed = null
+sprint_speed = null
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-8, 52, -18, 118, 60, 116, 60, 56)
@@ -33,14 +35,6 @@ scale = Vector2(0.208457, 0.209732)
 texture = ExtResource("3_bio32")
 metadata/_edit_lock_ = true
 
-[node name="GhostKillingZone" type="Area2D" parent="LightStuff/FlashlightSprite"]
-position = Vector2(335.801, -38.1439)
-scale = Vector2(4.79715, 4.76799)
-collision_mask = 2
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LightStuff/FlashlightSprite/GhostKillingZone"]
-polygon = PackedVector2Array(-100, -4, -1256, -1176, -1206, 804, -104, 22)
-
 [node name="FlashlightOccluder" type="LightOccluder2D" parent="LightStuff"]
 position = Vector2(0, 2)
 occluder = SubResource("OccluderPolygon2D_v2kam")
@@ -50,6 +44,11 @@ position = Vector2(-62, 12)
 energy = 1.25
 texture = ExtResource("3_jl0o0")
 texture_scale = 2.0
+
+[node name="GhostKillingZone" type="Area2D" parent="LightStuff"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LightStuff/GhostKillingZone"]
+polygon = PackedVector2Array(-100, -4, -1038, -654, -1060, 430, -104, 22)
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
 scale = Vector2(3, 3)
@@ -69,5 +68,5 @@ autostart = true
 color = Color(0, 0, 0, 1)
 blend_mode = 1
 
-[connection signal="body_entered" from="LightStuff/FlashlightSprite/GhostKillingZone" to="." method="_on_ghost_killing_zone_body_entered"]
-[connection signal="body_exited" from="LightStuff/FlashlightSprite/GhostKillingZone" to="." method="_on_ghost_killing_zone_body_exited"]
+[connection signal="body_entered" from="LightStuff/GhostKillingZone" to="." method="_on_ghost_killing_zone_body_entered"]
+[connection signal="body_exited" from="LightStuff/GhostKillingZone" to="." method="_on_ghost_killing_zone_body_exited"]

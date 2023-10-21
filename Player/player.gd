@@ -50,3 +50,14 @@ func _input(event):
 	if event.is_action_pressed("Interact"):
 		PressedInteract.emit()
 		
+
+
+func _on_ghost_killing_zone_body_entered(body):
+	if "InPlayerFlashlight" in body:
+		body.InPlayerFlashlight = true
+		print("ghost is in range")
+
+func _on_ghost_killing_zone_body_exited(body):
+	if "InPlayerFlashlight" in body:
+		body.InPlayerFlashlight = false
+		print("ghost is no longer in range")
