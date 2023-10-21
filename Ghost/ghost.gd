@@ -5,9 +5,10 @@ signal game_over()
 @onready var GhostSprite: Sprite2D = $GhostSprite
 var player
 @export var speed: int = 100
+@export var Health: int = 100
 
 var InPlayerFlashlight: bool = false
-var Health: int = 100
+
 
 func _ready():
 	player = get_tree().get_first_node_in_group("Player")

@@ -14,6 +14,7 @@ func _process(_delta):
 func _ready():
 	
 	$Timer.start()
+	$GhostSpawnTimer.start()
 
 	var uniqueNumbers = []
 	while uniqueNumbers.size() < Globals.NoteAmount:
@@ -119,4 +120,6 @@ func _on_win_area_body_entered(body):
 		TimeLabel.text = "Completed in " + str(time) + " seconds"
 		$Timer.stop()
 		
-		
+func _on_ghost_spawn_timer_timeout():
+	CreateGhost()
+	$GhostSpawnTimer.start()
