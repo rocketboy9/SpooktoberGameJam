@@ -194,7 +194,7 @@ position = Vector2(-180, 1890)
 position = Vector2(-245, 877)
 
 [node name="GhostSpawnTimer" type="Timer" parent="."]
-wait_time = 15.0
+wait_time = 12.0
 
 [node name="Gravestones" type="Node2D" parent="."]
 position = Vector2(469, 186)
